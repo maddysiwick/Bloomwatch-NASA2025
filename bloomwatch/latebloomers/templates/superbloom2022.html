@@ -26,6 +26,7 @@
         <span>April 5</span>
     </div>
 </div>
+<div id="sliderMessage" style="color: gray;">Move the slider to analyze bloom status.</div>
 
 <div class="top-right-box">
     <div class="info-box">
@@ -58,28 +59,70 @@
 </a>
 
 {% endblock %}
-
+<div id="sliderMessage"></div>
 {% block extra_js %} 
 <script>
-    window.onload = function() {
-        const slider = document.getElementById("myRange");
-    
-        const backgrounds = {
-            1: "{% static 'latebloomers/shrek1.png' %}",
-            2: "{% static 'latebloomers/shrek2.png' %}",
-            3: "{% static 'latebloomers/shrek3.png' %}",
-            4: "{% static 'latebloomers/shrek4.png' %}",
-            5: "{% static 'latebloomers/shrek5.png' %}"
-        };
-    
-        // Set initial background
-        document.body.style.backgroundImage = `url(${backgrounds[slider.value]})`;
-    
-        // Update background on slider change
-        slider.addEventListener("input", function() {
-            document.body.style.backgroundImage = `url(${backgrounds[this.value]})`;
-        });
+window.onload = function() {
+    const slider = document.getElementById("myRange");
+    const messageDiv = document.getElementById("sliderMessage");  // Make sure this div exists in your HTML
+
+    const backgrounds = {
+        1: "{% static 'latebloomers/2023-superbloom.jpg' %}",
+        2: "{% static 'latebloomers/shrek1.png' %}",
+        3: "{% static 'latebloomers/2023-superbloom.jpg' %}",
+        4: "{% static 'latebloomers/2023-superbloom.jpg' %}",
+        5: "{% static 'latebloomers/2023-superbloom.jpg' %}"
     };
+
+    // Set initial background
+    document.body.style.backgroundImage = `url(${backgrounds[slider.value]})`;
+
+    // Update background and send AJAX on slider change
+    slider.addEventListener("input", function() {
+        const sliderValue = this.value;
+        document.body.style.backgroundImage = `url(${backgrounds[sliderValue]})`;
+
+        fetch("/process-slider/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRFToken": getCookie("csrftoken")
+            },
+            body: JSON.stringify({ value: sliderValue })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.is_valid) {
+                messageDiv.textContent = "✅ This image has a superbloom!";
+                messageDiv.style.color = "green";
+                console.log("Superbloom detected!");
+            } else {
+                messageDiv.textContent = "⚠️ This image does not have a superbloom.";
+                messageDiv.style.color = "red";
+                console.log("No superbloom detected.");
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            messageDiv.textContent = "❌ Failed to process image.";
+            messageDiv.style.color = "gray";
+        });
+    });
+
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== "") {
+            const cookies = document.cookie.split(";");
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + "=")) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+};
 </script>
 {% endblock %}
-    
