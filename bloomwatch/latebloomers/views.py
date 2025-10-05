@@ -54,8 +54,11 @@ def process_slider2023(request):
         # Build filename and check validity
         dates={
             1: "23-2-2.jpeg",
-            2: "23-4-7.jpeg",
-            3: "23-6-2.jpeg",
+            2: "23-2-10.jpeg",
+            3: "23-4-7.jpeg",
+            4: "23-4-15.jpeg",
+            5: "23-5-17.jpeg",
+            6: "23-6-2.jpeg",
         }
         filename1=f"latebloomers/static/latebloomers/yellow"+dates[int(slider_value)]
         filename2=f"latebloomers/static/latebloomers/nvdi"+dates[int(slider_value)]

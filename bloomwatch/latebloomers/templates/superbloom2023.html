@@ -52,10 +52,13 @@
 
 
 <div class="slidecontainer">
-    <input type="range" min="1" max="3" value="1" class="slider" id="myRange" step="1">
+    <input type="range" min="1" max="6" value="1" class="slider" id="myRange" step="1">
     <div class="slider-labels">
         <span>Feburary 2</span>
+        <span>Feburary 10</span>
         <span>April 7</span>
+        <span>April 15</span>
+        <span>May 17</span>
         <span>June 2</span>
 
     </div>
@@ -73,8 +76,11 @@ window.onload = function() {
 
     const backgrounds = {
         1: "{% static 'latebloomers/original23-2-2.png' %}",
-        2: "{% static 'latebloomers/original23-4-7.png' %}",
-        3: "{% static 'latebloomers/original23-6-2.png' %}",
+        2: "{% static 'latebloomers/original23-2-10.jpg' %}",
+        3: "{% static 'latebloomers/original23-4-7.png' %}",
+        4: "{% static 'latebloomers/original23-4-15.jpg' %}",
+        5: "{% static 'latebloomers/original23-5-17.jpg' %}",
+        6: "{% static 'latebloomers/original23-6-2.png' %}",
     };
 
     // Set initial background
