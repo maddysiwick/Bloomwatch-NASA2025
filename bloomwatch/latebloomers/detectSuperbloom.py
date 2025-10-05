@@ -17,10 +17,10 @@ def isSuperBloom(image1,image2):
         total_pixels= overlap_mask.size
         overlapping_pixels = cv2.countNonZero(overlap_mask)
         overlap_percentage = (overlapping_pixels / total_pixels) * 100
-
+        print(overlap_percentage)
         return overlap_percentage
     
-    if testOverlap(image1,image2) > 0:
+    if testOverlap(image1,image2) > 0.01:
         return True
     else:
         return False
