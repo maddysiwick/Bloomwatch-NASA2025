@@ -109,19 +109,16 @@ window.onload = function() {
         .then(response => response.json())
         .then(data => {
             if (data.is_valid) {
-                messageDiv.textContent = "✅ This image has a superbloom!";
-                messageDiv.style.color = "green";
+                messageDiv.textContent = "This image has a superbloom!";
                 console.log("Superbloom detected!");
             } else {
-                messageDiv.textContent = "⚠️ This image does not have a superbloom.";
-                messageDiv.style.color = "red";
+                messageDiv.textContent = "This image does not have a superbloom.";
                 console.log("No superbloom detected.");
             }
         })
         .catch(error => {
             console.error("Error:", error);
-            messageDiv.textContent = "❌ Failed to process image.";
-            messageDiv.style.color = "gray";
+            messageDiv.textContent = "Failed to process image.";
         });
     });
 
