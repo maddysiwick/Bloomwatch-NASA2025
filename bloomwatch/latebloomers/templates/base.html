@@ -12,6 +12,83 @@
             margin-top: 56px;
             }
         
+        .sliderbox {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 8px;
+            background-color: #F8F3E3;
+            margin-top: 20px;
+            margin-left: 20px;
+            padding: 15px 20px;
+            outline: 5px solid #DCBDE4;
+            transform: translateX(-50%);
+            font-family: 'Nunito', sans-serif;
+        }
+
+        #sliderMessage {
+            color: black;
+        }
+        
+        #youhavebloomimages {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        #youhavebloomimages img {
+            position: absolute;
+            width: 75px;
+            height: auto;
+
+            transform: scale(0);
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            opacity: 0;
+        }
+
+        #youhavebloomimages img.show {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        #img1 {
+            bottom: 20px;
+            right: 20px;
+        }
+
+        /* Directly above img1 */
+        #img2 {
+            bottom: 180px;   /* img1 height + spacing */
+            right: 20px;
+        }
+
+        /* To the left of img1 */
+        #img3 {
+            bottom: 20px;
+            right: 180px;   /* img1 width + spacing */
+        }
+
+        #img4 {
+            bottom: 20px;
+            left: 20px;
+        }
+
+        /* Directly above img1 */
+        #img5 {
+            bottom: 180px;   /* img1 height + spacing */
+            left: 20px;
+        }
+
+        /* To the left of img1 */
+        #img6 {
+            bottom: 20px;
+            left: 180px;   /* img1 width + spacing */
+        }
+
         .image-button {
             width: 200px; /* size of image */
             height: auto;
@@ -94,7 +171,6 @@
             background: #DCBDE4 !important;
             cursor: pointer;
             border-radius: 50%;
-            border: 2px solid #555;
             margin-top: -5px;
             margin-right: -4px;
         }
@@ -108,7 +184,6 @@
             background: #DCBDE4 !important;
             cursor: pointer;
             border-radius: 50%;
-            border: 2px solid #555;
         }
 
         /* Optional: fill before the thumb (for WebKit browsers) */
@@ -144,6 +219,7 @@
             justify-content: space-between;
             margin-top: 8px;
             width: 100%;
+            
            
         }
         .slider-labels span {
@@ -155,6 +231,7 @@
             text-align: center;
             border-radius: 5px;
             font-family: 'Nunito', sans-serif;
+            border: 2px solid #DCBDE4;
         }
     </style>
             
