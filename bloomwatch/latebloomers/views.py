@@ -72,9 +72,11 @@ def process_slider2022(request):
 
         # change files
         dates={
-            1: "23-2-2.jpeg",
-            2: "23-4-7.jpeg",
-            3: "23-6-2.jpeg",
+            
+            1: "22-2-2.jpeg",
+            2: "22-3-11.jpeg",
+            3: "22-4-4.jpeg",
+            4: "22-6-15.jpeg",
         }
         filename1=f"latebloomers/static/latebloomers/yellow"+dates[int(slider_value)]
         filename2=f"latebloomers/static/latebloomers/nvdi"+dates[int(slider_value)]

@@ -70,15 +70,4 @@ def monthavg(lst3):
     monthly_rain=(sum(lst3))/(len(lst3))
     return(round(monthly_rain,2))
 
-print(f'J {monthavg(tem01_avg)}')
-print(f'F {monthavg(tem02_avg)}')
-print(f'M {monthavg(tem03_avg)}')
-print(f'A {monthavg(tem04_avg)}')
-print(f'My {monthavg(tem05_avg)}')
-print(f'J {monthavg(tem06_avg)}')
-print(f'Jl {monthavg(tem07_avg)}')
-print(f'Ag {monthavg(tem08_avg)}')
-print(f'S {monthavg(tem09_avg)}')
-print(f'O {monthavg(tem10_avg)}')
-print(f'N {monthavg(tem11_avg)}')
-print(f'D {monthavg(tem12_avg)}')
+

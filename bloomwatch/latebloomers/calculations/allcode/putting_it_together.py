@@ -27,4 +27,3 @@ temp_variation_22 = round(((monthavg(tem10_21_avg) - monthavg(tem11_22_avg))+(mo
 temp_variation_23 = round(((monthavg(tem10_22_avg) - monthavg(tem11_avg))+(monthavg(tem11_22_avg) - monthavg(tem12_22_avg))+(monthavg(tem01_avg) - monthavg(tem12_22_avg))+(monthavg(tem02_avg)-monthavg(tem01_avg))), 4)
 
 
-print(f'2022 June-Sept Average Precipitation: {prec_june_sept_22_avg} inches')

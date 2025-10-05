@@ -20,7 +20,7 @@ def isSuperBloom(image1,image2):
         print(overlap_percentage)
         return overlap_percentage
     
-    if testOverlap(image1,image2) > 0.01:
+    if testOverlap(image1,image2) > 0.1:
         return True
     else:
         return False

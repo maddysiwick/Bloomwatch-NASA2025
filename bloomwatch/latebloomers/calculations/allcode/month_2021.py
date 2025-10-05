@@ -70,17 +70,3 @@ csv12_21_avg=avg(csv12_21,csv12_21_avg)
 def monthavg(lst3):
     monthly_rain=(sum(lst3))/(len(lst3))
     return(round(monthly_rain,2))
-
-print(f'J {monthavg(csv01_21_avg)}')
-print(f'F {monthavg(csv02_21_avg)}')
-print(f'M {monthavg(csv03_21_avg)}')
-print(f'A {monthavg(csv04_21_avg)}')
-print(f'My {monthavg(csv05_21_avg)}')
-print(f'J {monthavg(csv06_21_avg)}')
-print(f'Jl {monthavg(csv07_21_avg)}')
-print(f'Ag {monthavg(csv08_21_avg)}')
-print(f'S {monthavg(csv09_21_avg)}')
-print(f'O {monthavg(csv10_21_avg)}')
-print(f'N {monthavg(csv11_21_avg)}')
-print(f'D {monthavg(csv12_21_avg)}')
-
