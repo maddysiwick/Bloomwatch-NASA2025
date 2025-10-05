@@ -76,7 +76,7 @@ def process_slider2022(request):
         # change files
         dates={
             
-            1: "22-2-2.jpeg",
+            1: "22-2-7.jpeg",
             2: "22-3-11.jpeg",
             3: "22-4-4.jpeg",
             4: "22-6-15.jpeg",
