@@ -11,10 +11,13 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-
+import os
+import pandas
+from django.conf import settings
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+csv01_21_path = os.path.join(settings.BASE_DIR, 'latebloomers/calculations/Rainfall data/cnty/2021/prcp-202101-cty-scaled.csv')
+csv01_21 = pandas.read_csv(csv01_21_path)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/

@@ -24,23 +24,22 @@
         <h4>Meteorological data</h4>
         <ul>
             <li class="season-title">June-September (22)</li>
-            <li>Avg. Rainfall: x</li>
-            <li class="norm-data">Normal: x'</li>
+            <li>Rainfall Avg: {{ prec_june_sept_23_avg }} in</li>
+            <li class="norm-data">Normal: 0.08 in</li>
         </ul>
         <hr>
         <ul>
             <li class="season-title">October-Febuary (22-23)</li>
-            <li>Rainfall Avg.: x</li>
-            <li class="norm-data">Normal: x'</li>
-            <li>Temperature Avg.: y</li>
-            <li class="norm-data">Normal: y'</li>
-            <li>Temperature Var.: z</li>
-            <li class="norm-data">Normal: z'</li>
+            <li>Rainfall Avg: {{ prec_oct_feb_23_avg }} in</li>
+            <li class="norm-data">Normal: 1.01 in</li>
+            <li>Temperature Avg: {{ temp_oct_feb_23_avg }}˚C </li>
+            <li class="norm-data">Normal: 10.00˚C</li>
+            <li>Temperature Var: {{ temp_variation_23 }}˚C </li>
+            <li class="norm-data">Normal: 4.75˚C</li>
         </ul>
     </div>
 
 </div>
-
 <a href="{% url 'home' %}">
     <div class="box">
         <img src="{% static 'latebloomers/homebutton.jpg' %}" alt="Home Button" class="box-image">
