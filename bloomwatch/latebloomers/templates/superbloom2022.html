@@ -1,0 +1,85 @@
+{% extends "base.html" %} 
+{% load static %}
+{% block title %} Home Page {% endblock %}
+
+{% block extra_css %}
+{{block.super}}
+
+<style>
+    body {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="slidecontainer">
+    <input type="range" min="1" max="5" value="1" class="slider" id="myRange" step="1">
+    <div class="slider-labels">
+        <span>April 1</span>
+        <span>April 2</span>
+        <span>April 3</span>
+        <span>April 4</span>
+        <span>April 5</span>
+    </div>
+</div>
+
+<div class="top-right-box">
+    <div class="info-box">
+        <h4>Meteorological data</h4>
+        <ul>
+            <li class="season-title">June-September (21)</li>
+            <li>Avg Rainfall: x</li>
+            <li class="norm-data">Norm: x'</li>
+            <li>Avg Temperature: y</li>
+            <li class="norm-data">norm: y'</li>
+        </ul>
+        <hr>
+        <ul>
+            <li class="season-title">October-Febuary (21-22)</li>
+            <li>Avg Rainfall: x</li>
+            <li class="norm-data">Norm: x'</li>
+            <li>Avg Temperature: y</li>
+            <li class="norm-data">Norm: y'</li>
+        </ul>
+    </div>
+
+</div>
+<div class="datebox">
+    <img src="{% static 'latebloomers/2022.png' %}" alt="Flower Logo" class="photo-image">
+</div>
+<a href="{% url 'home' %}">
+    <div class="box">
+        <img src="{% static 'latebloomers/homebutton.jpg' %}" alt="Home Button" class="box-image">
+    </div>
+</a>
+
+{% endblock %}
+
+{% block extra_js %} 
+<script>
+    window.onload = function() {
+        const slider = document.getElementById("myRange");
+    
+        const backgrounds = {
+            1: "{% static 'latebloomers/shrek1.png' %}",
+            2: "{% static 'latebloomers/shrek2.png' %}",
+            3: "{% static 'latebloomers/shrek3.png' %}",
+            4: "{% static 'latebloomers/shrek4.png' %}",
+            5: "{% static 'latebloomers/shrek5.png' %}"
+        };
+    
+        // Set initial background
+        document.body.style.backgroundImage = `url(${backgrounds[slider.value]})`;
+    
+        // Update background on slider change
+        slider.addEventListener("input", function() {
+            document.body.style.backgroundImage = `url(${backgrounds[this.value]})`;
+        });
+    };
+</script>
+{% endblock %}
+    

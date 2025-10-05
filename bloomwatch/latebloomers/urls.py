@@ -1,0 +1,8 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path("home/", views.home, name="home"),
+    path("superbloom2022/", views.superbloom2022, name="superbloom2022"),
+    path("superbloom2023/", views.superbloom2023, name="superbloom2023"),
+]

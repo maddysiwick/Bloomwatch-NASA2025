@@ -1,0 +1,90 @@
+{% extends "base.html" %} 
+{% load static %}
+{% block title %} Home Page {% endblock %}
+
+{% block extra_css %}
+{{block.super}}
+
+<style>
+    body {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="top-right-box">
+    <div class="info-box">
+        <h4>Meteorological data</h4>
+        <ul>
+            <li class="season-title">June-September (22)</li>
+            <li>Avg. Rainfall: x</li>
+            <li class="norm-data">Normal: x'</li>
+        </ul>
+        <hr>
+        <ul>
+            <li class="season-title">October-Febuary (22-23)</li>
+            <li>Rainfall Avg.: x</li>
+            <li class="norm-data">Normal: x'</li>
+            <li>Temperature Avg.: y</li>
+            <li class="norm-data">Normal: y'</li>
+            <li>Temperature Var.: z</li>
+            <li class="norm-data">Normal: z'</li>
+        </ul>
+    </div>
+
+</div>
+
+<a href="{% url 'home' %}">
+    <div class="box">
+        <img src="{% static 'latebloomers/homebutton.jpg' %}" alt="Home Button" class="box-image">
+    </div>
+</a>
+
+<div class="datebox">
+    <img src="{% static 'latebloomers/2023.png' %}" alt="Flower Logo" class="photo-image">
+</div>
+
+
+<div class="slidecontainer">
+    <input type="range" min="1" max="5" value="1" class="slider" id="myRange" step="1">
+    <div class="slider-labels">
+        <span>April 1</span>
+        <span>April 2</span>
+        <span>April 3</span>
+        <span>April 4</span>
+        <span>April 5</span>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %} 
+<script>
+    window.onload = function() {
+        const slider = document.getElementById("myRange");
+    
+        const backgrounds = {
+            1: "{% static 'latebloomers/flower1.png' %}",
+            2: "{% static 'latebloomers/flower2.png' %}",
+            3: "{% static 'latebloomers/flower3.png' %}",
+            4: "{% static 'latebloomers/flower4.png' %}",
+            5: "{% static 'latebloomers/flower5.png' %}"
+        };
+    
+        // Set initial background
+        document.body.style.backgroundImage = `url(${backgrounds[slider.value]})`;
+    
+        // Update background on slider change
+        slider.addEventListener("input", function() {
+            document.body.style.backgroundImage = `url(${backgrounds[this.value]})`;
+        });
+    };
+</script>
+{% endblock %}

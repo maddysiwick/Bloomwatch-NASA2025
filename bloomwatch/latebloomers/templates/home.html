@@ -1,0 +1,36 @@
+{% extends "base.html" %} 
+{% load static %}
+
+{% block title %} Home Page {% endblock %}
+
+{% block extra_css %}
+{{block.super}}
+<style>
+    body {
+        background-image: url("{% static 'latebloomers/superbloomy.png' %}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+    <a href="{% url 'superbloom2022' %}">
+        <img src="{% static 'latebloomers/2022.png' %}"
+                alt="Superbloom 2022"
+                class="image-button">
+    </a>
+
+    <a href="{% url 'superbloom2023' %}">
+        <img src="{% static 'latebloomers/2023.png' %}"
+                alt="Superbloom 2023"
+                class="image-button">
+    </a>
+
+</div>
+
+
+{% endblock %}
