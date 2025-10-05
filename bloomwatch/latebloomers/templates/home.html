@@ -7,7 +7,7 @@
 {{block.super}}
 <style>
     body {
-        background-image: url("{% static 'latebloomers/superbloomy.png' %}");
+        background-image: url("{% static 'latebloomers/superbloom!.jpg' %}");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -17,6 +17,13 @@
 {% endblock %}
 
 {% block content %}
+<img src="{% static 'latebloomers/title!.png' %}" alt="Late Bloomers Logo" style="
+    position: fixed;
+    top: -20px;
+    left: 50%;
+    width: 1000px;
+    transform: translateX(-50%);
+    z-index: 10;">
 <div class="wrapper">
     <a href="{% url 'superbloom2022' %}">
         <img src="{% static 'latebloomers/2022.png' %}"
